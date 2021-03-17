@@ -1,0 +1,1 @@
+worker: python facebook-scraper.py
