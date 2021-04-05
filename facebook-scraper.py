@@ -34,9 +34,8 @@ for post in get_posts (group=group2,pages = 1):
          client = SearchClient.create('7HGG4UE4R4','a231a7cc19ce990e955a6b8db62c3fa5')
          index = client.init_index('bds')
          index.save_object({
-            'objectID': 'myID',
-            'firstname': 'Jimmie',
-            'lastname': 'Barninger'
+            'objectID': str(postid),
+            '4_Noidung': text
          })
       #Nếu postid rỗng thì ko làm gì.
       else:
