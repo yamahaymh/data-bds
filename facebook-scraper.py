@@ -10,7 +10,6 @@ group3='279200489509507'  # Nhà đất Tp Cao Lãnh
 for post in get_posts (group=group2,pages = 1):
 
    text = post['text']
-   print(text)
    postid = post['post_id']
    time = post['time']
    url = "https://www.facebook.com/groups/"+group2+"/permalink/"+str(postid)
@@ -36,7 +35,7 @@ for post in get_posts (group=group2,pages = 1):
          index = client.init_index('bds')
 
          records = {
-            "objectID": postid,
+            "objectID": str(postid),
             "4_Noidung": text
          }
          index.save_objects(records)
