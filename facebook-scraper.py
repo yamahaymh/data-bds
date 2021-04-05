@@ -33,12 +33,10 @@ for post in get_posts (group=group2,pages = 1):
          # Push Algolia
          client = SearchClient.create('7HGG4UE4R4','a231a7cc19ce990e955a6b8db62c3fa5')
          index = client.init_index('bds')
-
-         records = {
-            "objectID": str(postid),
-            "4_Noidung": text
-         }
-         index.save_objects(records)
+         index.save_objects({
+            'objectID': str(postid),
+            '4_Noidung': text
+            })
       #Nếu postid rỗng thì ko làm gì.
       else:
          None
